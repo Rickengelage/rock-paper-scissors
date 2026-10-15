@@ -84,5 +84,4 @@ if (humanScoreBoard > computerScoreBoard) {
 }
 }
 
-
-playGame ()
+playGame()
