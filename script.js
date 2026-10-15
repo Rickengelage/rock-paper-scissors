@@ -1,25 +1,27 @@
-let randomNum = Math.floor(Math.random() * 3);
-
-
-function getComputerChoice(){   
+function getComputerChoice(){  
+    let randomNum = Math.floor(Math.random() * 3); 
     if (randomNum == 0) {
-        return "Rock";
+        return "rock";
     } else if (randomNum == 1) {
-        return "Paper";
+        return "paper";
     } else {
         return "scissors";
     }
 }
-
+console.log(getComputerChoice());
 
 function getHumanChoice() {
 
-    let choice = prompt("Choose between, Rock, Paper, or Scissors")
-    if(choice == "Rock") {
+    let choice = prompt("Choose between, Rock, Paper, or Scissors");
+    choice = choice.toLowerCase().trim();
+    if(choice == "rock") {
         return "rock";
     } else if(choice == "paper"){
         return "paper";
-    } else if(choice == "Scissors")
+    } else if(choice == "scissors"){
         return "scissors";
+    }else {
+        return "invalid input"
+    }
 }
 console.log(getHumanChoice());
