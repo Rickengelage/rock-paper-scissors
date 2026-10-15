@@ -28,15 +28,22 @@ function playGame(){
 
 let humanScoreBoard = 0;
 let computerScoreBoard = 0;
+let roundCounter = 0;
 
 
 function playRound(humanScore, computerScore) {
 
 if (humanScore == "rock") {
+    roundCounter++
+    console.log("ROUND" + " " + roundCounter + "...");
     console.log("you choose rock!");
 } else if(humanScore == "paper") {
+    roundCounter++
+    console.log("ROUND" + " " + roundCounter + "...");
     console.log("you choose paper");
 } else if(humanScore == "scissors"){
+    roundCounter++
+    console.log("ROUND" + " " + roundCounter + "...");
     console.log("you choose scissors");
 }else {
     console.log("invalid input");
