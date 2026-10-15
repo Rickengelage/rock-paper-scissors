@@ -10,4 +10,16 @@ function getComputerChoice(){
         return "scissors";
     }
 }
-console.log(getComputerChoice());
+
+
+function getHumanChoice() {
+
+    let choice = prompt("Choose between, Rock, Paper, or Scissors")
+    if(choice == "Rock") {
+        return "rock";
+    } else if(choice == "paper"){
+        return "paper";
+    } else if(choice == "Scissors")
+        return "scissors";
+}
+console.log(getHumanChoice());
