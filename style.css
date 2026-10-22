@@ -10,6 +10,7 @@ body {
 }
 .btn-container {
     display: flex;
+    flex-direction: column;
     gap: 24px;
 }
 .btn-container button{
