@@ -88,8 +88,16 @@ if(humanScore == "Rock" && computerScore == "paper") {
     //adding 1 to the computer scoreboard
    
 }else if(humanScore == "Rock" && computerScore == "scissors"){
-    console.log("the computer chooses scissors! YOU WIN!")
+    //update the scoreboard by 1 when human wins one round
     humanScoreBoard++;
+    //updating the human scoreboard text
+    humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
+   //displaying the computer choice as an h3
+    const container = document.querySelector(".btn-container");
+    const computerChoice = document.createElement("h3")
+    computerChoice.classList.add("computerChoice")
+    container.appendChild(computerChoice);
+    computerChoice.textContent = "the computer chooses scissors! YOU WIN!";
 }else if(humanScore == "Rock" && computerScore == "rock"){
     console.log("the computer chooses rock too, its a tie!");
 }else if(humanScore == "paper" && computerScore == "rock") {
