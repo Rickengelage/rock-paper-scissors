@@ -5,12 +5,13 @@ body {
 .container {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 24px;
 }
-.btn-container {
+.btn-flex-container {
     display: flex;
-    flex-direction: column;
     gap: 24px;
 }
 .btn-container button{
