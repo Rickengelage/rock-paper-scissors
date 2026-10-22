@@ -14,28 +14,22 @@ rockBtn.addEventListener("click", () => {
     
 });
 
-
-// function getHumanChoice() {
-// const Rock = document.querySelector(".btn-1");
-// Rock.addEventListener("click", playRound())
-//     // let choice = prompt("Choose between, Rock, Paper, or Scissors");
-//     // choice = choice.toLowerCase().trim();
-//     // if(choice == "rock") {
-//     //     return "rock";
-//     // } else if(choice == "paper"){
-//     //     return "paper";
-//     // } else if(choice == "scissors"){
-//     //     return "scissors";
-//     // }else {
-//     //     return "invalid input"
-//     // }
-// }
-
 // function playGame(){
 
 let humanScoreBoard = 0;
 let computerScoreBoard = 0;
-let roundCounter = 0;
+let roundCounter = 1;
+
+const displayContainer = document.querySelector(".roundDisplay");
+    const currentRound = document.createElement("h1");
+    //adding the h1 to dom
+    currentRound.classList.add("currentRound");
+    //appending h1 as child of btn contianer div//
+   displayContainer.appendChild(currentRound);
+    //chaning the text of the h1
+    currentRound.textContent = "start the first round by choosing rock, paper or scissors!";
+
+
 
 
 function playRound(humanScore, computerScore) {
@@ -43,20 +37,13 @@ function playRound(humanScore, computerScore) {
     // let computerScore = getComputerChoice();
 
 if (humanScore == "Rock" ) {
-    roundCounter++
-    const container = document.querySelector(".btn-container");
-    //creating an h1 element
-    const roundDisplay = document.createElement("h1");
-    //adding the h1 to dom
-    roundDisplay.classList.add("roundDisplay");
-    //appending h1 as child of btn contianer div//
-    container.appendChild(roundDisplay);
-    //chaning the text of the h1
-    roundDisplay.textContent = "ROUND" + " " + roundCounter + "...";
+    
+    currentRound.textContent = "round" + " " + roundCounter++;
     // text showing what your choice was//
-    const choice = document.createElement("h3")
-    choice.classList.add("choice")
-    container.appendChild(choice)
+    const container = document.querySelector(".btn-container");
+    const choice = document.createElement("h3");
+    choice.classList.add("choice");
+    container.appendChild(choice);
     choice.textContent = "you choose rock !";
     // console.log("ROUND" + " " + roundCounter + "...");
     // console.log("you choose rock!");
@@ -118,6 +105,23 @@ if(humanScore == "Rock" && computerScore == "paper") {
 // }else {
 //     console.log("The end result..... its a tie")
 // }
+// }
+
+
+// function getHumanChoice() {
+// const Rock = document.querySelector(".btn-1");
+// Rock.addEventListener("click", playRound())
+//     // let choice = prompt("Choose between, Rock, Paper, or Scissors");
+//     // choice = choice.toLowerCase().trim();
+//     // if(choice == "rock") {
+//     //     return "rock";
+//     // } else if(choice == "paper"){
+//     //     return "paper";
+//     // } else if(choice == "scissors"){
+//     //     return "scissors";
+//     // }else {
+//     //     return "invalid input"
+//     // }
 // }
 
 // playGame()
