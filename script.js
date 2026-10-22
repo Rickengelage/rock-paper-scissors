@@ -32,12 +32,21 @@ const displayContainer = document.querySelector(".roundDisplay");
     //chaning the text of the h1
     currentRound.textContent = "start the first round by choosing rock, paper or scissors!";
 
-//scoreboard section where the scoreboard is displayed and updated.
+//scoreboard section where the scoreboard of the computer is displayed and updated.
 const score = document.querySelector(".scoreboard");
 const computerPoints = document.createElement("h2");
 computerPoints.classList.add("computerPoints");
 score.appendChild(computerPoints);
+//displaying the current computer score at the start
 computerPoints.textContent = "computer Score is:" + " " + computerScoreBoard;
+
+//scoreboard section where the scoreboard of human is displayed and updated.
+const scoreHuman = document.querySelector(".scoreboard");
+const humanPoints = document.createElement("h2");
+humanPoints.classList.add("humanPoints");
+scoreHuman.appendChild(humanPoints);
+//displaying the current computer score at the start
+humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
 
 
 
@@ -64,7 +73,9 @@ if (humanScore == "Rock" ) {
 }
 
 if(humanScore == "Rock" && computerScore == "paper") {
+    //updated the computer scorebaord when he wins
     computerScoreBoard++
+    //updated the computer scoreboard text after he won a round, adding 1 to his score
     computerPoints.textContent = "computer Score is:" + " " + computerScoreBoard;
 
     //targeting the div with buttons container
