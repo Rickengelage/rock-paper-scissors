@@ -8,3 +8,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+.btn-container {
+    display: flex;
+    gap: 24px;
+}
+.btn-container button{
+    padding: 24px;
+    border-radius: 25px;
+    
+}
+.btn-container button:hover {
+    cursor: pointer;
+}
