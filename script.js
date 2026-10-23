@@ -14,6 +14,11 @@ rockBtn.addEventListener("click", () => {
     playRound("Rock", getComputerChoice());
     
 });
+const paperBtn = document.querySelector(".btn-2")
+paperBtn.addEventListener("click", () => {
+    playRound("paper", getComputerChoice());
+    
+});
 
 // here used to be the playgame function
 
@@ -64,21 +69,17 @@ machineDisplay.textContent = ""
 
 function playRound(humanScore, computerScore) {
 if (humanScore == "Rock" ) {
-    
     //updating what round we are on
     currentRound.textContent = "round" + " " + roundCounter++;
     // text showing what your choice was//
     choiceDisplay.textContent = "you choose Rock !"
-    // const container = document.querySelector(".btn-container");
-    // const choice = document.createElement("h3");
-    // choice.classList.add("choice");
-    // container.appendChild(choice);
-    // choice.textContent = " " + "you choose rock !";
    
 } else if(humanScore == "paper") {
     roundCounter++
-    console.log("ROUND" + " " + roundCounter + "...");
-    console.log("you choose paper");
+    //updating what round we are on
+    currentRound.textContent = "round" + " " + roundCounter++;
+    //showing the text what choice was made
+    choiceDisplay.textContent = "you choose Paper !"
 } else if(humanScore == "scissors"){
     roundCounter++
     console.log("ROUND" + " " + roundCounter + "...");
@@ -93,15 +94,7 @@ if(humanScore == "Rock" && computerScore == "paper") {
     //updated the computer scoreboard text after he won a round, adding 1 to his score
     computerPoints.textContent = "computer Score is:" + " " + computerScoreBoard;
     machineDisplay.textContent = "the computer chooses paper, therefor the computer wins this round."
-    
-    // //targeting the div with buttons container
-    // const container = document.querySelector(".btn-container");
-    // //creating an h3 that will display the computer choice
-    // const computerChoice = document.createElement("h3")
-    // computerChoice.classList.add("computerChoice")
-    // container.appendChild(computerChoice);
-    // computerChoice.textContent = "the computer chooses paper, therefor the computer wins this round";
-    
+    machineDisplay.setAttribute("style" ,"color: red");
     
 }else if(humanScore == "Rock" && computerScore == "scissors"){
     //update the scoreboard by 1 when human wins one round
@@ -110,24 +103,12 @@ if(humanScore == "Rock" && computerScore == "paper") {
     humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
    //displaying the computer choice as an h3
     machineDisplay.textContent = "the computer chooses scissors! YOU WIN!"
-
-    // const container = document.querySelector(".btn-container");
-    // const computerChoice = document.createElement("h3")
-    // computerChoice.classList.add("computerChoice")
-    // container.appendChild(computerChoice);
-    // computerChoice.textContent = "the computer chooses scissors! YOU WIN!";
-
-    //HERE: please update the code below to also display what the computer choose,
-    //and then update the scoreboard acordingly!
+    machineDisplay.setAttribute("style" ,"color: green");
 }else if(humanScore == "Rock" && computerScore == "rock"){
     machineDisplay.textContent = "the computer chooses rock too, its a tie!"
-    // const container = document.querySelector(".btn-container");
-    // const computerChoice = document.createElement("h3")
-    // computerChoice.classList.add("computerChoice")
-    // container.appendChild(computerChoice);
-    // computerChoice.textContent = "the computer chooses rock too, its a tie";
+    machineDisplay.setAttribute("style" ,"color: gray");
+   
 
-    // 
 }else if(humanScore == "paper" && computerScore == "rock") {
     console.log("The computer chooses rock, YOU WIN!");
     humanScoreBoard++;
