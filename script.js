@@ -192,6 +192,7 @@ if(roundCounter > 5){
         result.classList.add("result");
         endresult.appendChild(result);
         result.textContent = "therefor the computer wins"
+        result.setAttribute("style", "color: red");
         //create button to play again
         const newGame = document.querySelector(".btn-container")
         const playAgain = document.createElement("button");
@@ -209,6 +210,7 @@ if(roundCounter > 5){
         resultHumanWin.classList.add("resultHumanWin");
         endresultHuman.appendChild(resultHumanWin);
         resultHumanWin.textContent = "therefor the computer wins"
+        resultHumanWin.setAttribute("style", "color: red;")
         //create button that will refresh page to play again
         const newGame = document.querySelector(".btn-container")
         const playAgain = document.createElement("button");
