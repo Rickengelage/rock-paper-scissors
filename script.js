@@ -48,18 +48,27 @@ scoreHuman.appendChild(humanPoints);
 //displaying the current computer score at the start
 humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
 
+const currentChoice = document.querySelector(".choiceContainer");
+const choiceDisplay = document.createElement("h3");
+    choiceDisplay.classList.add("choiceDisplay");
+   currentChoice.appendChild(choiceDisplay);
+   choiceDisplay.textContent = ""
+
 
 
 function playRound(humanScore, computerScore) {
 if (humanScore == "Rock" ) {
+    
     //updating what round we are on
     currentRound.textContent = "round" + " " + roundCounter++;
     // text showing what your choice was//
-    const container = document.querySelector(".btn-container");
-    const choice = document.createElement("h3");
-    choice.classList.add("choice");
-    container.appendChild(choice);
-    choice.textContent = " " + "you choose rock !";
+    choiceDisplay.textContent = "you choose Rock !"
+    // const container = document.querySelector(".btn-container");
+    // const choice = document.createElement("h3");
+    // choice.classList.add("choice");
+    // container.appendChild(choice);
+    // choice.textContent = " " + "you choose rock !";
+   
 } else if(humanScore == "paper") {
     roundCounter++
     console.log("ROUND" + " " + roundCounter + "...");
@@ -86,7 +95,7 @@ if(humanScore == "Rock" && computerScore == "paper") {
     container.appendChild(computerChoice);
     computerChoice.textContent = "the computer chooses paper, therefor the computer wins this round";
     //adding 1 to the computer scoreboard
-   
+    
 }else if(humanScore == "Rock" && computerScore == "scissors"){
     //update the scoreboard by 1 when human wins one round
     humanScoreBoard++;
