@@ -50,9 +50,15 @@ humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
 
 const currentChoice = document.querySelector(".choiceContainer");
 const choiceDisplay = document.createElement("h3");
-    choiceDisplay.classList.add("choiceDisplay");
-   currentChoice.appendChild(choiceDisplay);
-   choiceDisplay.textContent = ""
+choiceDisplay.classList.add("choiceDisplay");
+currentChoice.appendChild(choiceDisplay);
+choiceDisplay.textContent = ""
+
+const machineChoice = document.querySelector(".choiceContainer");
+const machineDisplay = document.createElement("h3");
+machineDisplay.classList.add("machineDisplay");
+machineChoice.appendChild(machineDisplay);
+machineDisplay.textContent = ""
 
 
 
@@ -86,15 +92,16 @@ if(humanScore == "Rock" && computerScore == "paper") {
     computerScoreBoard++
     //updated the computer scoreboard text after he won a round, adding 1 to his score
     computerPoints.textContent = "computer Score is:" + " " + computerScoreBoard;
-
-    //targeting the div with buttons container
-    const container = document.querySelector(".btn-container");
-    //creating an h3 that will display the computer choice
-    const computerChoice = document.createElement("h3")
-    computerChoice.classList.add("computerChoice")
-    container.appendChild(computerChoice);
-    computerChoice.textContent = "the computer chooses paper, therefor the computer wins this round";
-    //adding 1 to the computer scoreboard
+    machineDisplay.textContent = "the computer chooses paper, therefor the computer wins this round."
+    
+    // //targeting the div with buttons container
+    // const container = document.querySelector(".btn-container");
+    // //creating an h3 that will display the computer choice
+    // const computerChoice = document.createElement("h3")
+    // computerChoice.classList.add("computerChoice")
+    // container.appendChild(computerChoice);
+    // computerChoice.textContent = "the computer chooses paper, therefor the computer wins this round";
+    
     
 }else if(humanScore == "Rock" && computerScore == "scissors"){
     //update the scoreboard by 1 when human wins one round
@@ -102,21 +109,25 @@ if(humanScore == "Rock" && computerScore == "paper") {
     //updating the human scoreboard text
     humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
    //displaying the computer choice as an h3
-    const container = document.querySelector(".btn-container");
-    const computerChoice = document.createElement("h3")
-    computerChoice.classList.add("computerChoice")
-    container.appendChild(computerChoice);
-    computerChoice.textContent = "the computer chooses scissors! YOU WIN!";
+    machineDisplay.textContent = "the computer chooses scissors! YOU WIN!"
+
+    // const container = document.querySelector(".btn-container");
+    // const computerChoice = document.createElement("h3")
+    // computerChoice.classList.add("computerChoice")
+    // container.appendChild(computerChoice);
+    // computerChoice.textContent = "the computer chooses scissors! YOU WIN!";
 
     //HERE: please update the code below to also display what the computer choose,
     //and then update the scoreboard acordingly!
 }else if(humanScore == "Rock" && computerScore == "rock"){
-    const container = document.querySelector(".btn-container");
-    const computerChoice = document.createElement("h3")
-    computerChoice.classList.add("computerChoice")
-    container.appendChild(computerChoice);
-    computerChoice.textContent = "the computer chooses rock too, its a tie";
+    machineDisplay.textContent = "the computer chooses rock too, its a tie!"
+    // const container = document.querySelector(".btn-container");
+    // const computerChoice = document.createElement("h3")
+    // computerChoice.classList.add("computerChoice")
+    // container.appendChild(computerChoice);
+    // computerChoice.textContent = "the computer chooses rock too, its a tie";
 
+    // 
 }else if(humanScore == "paper" && computerScore == "rock") {
     console.log("The computer chooses rock, YOU WIN!");
     humanScoreBoard++;
