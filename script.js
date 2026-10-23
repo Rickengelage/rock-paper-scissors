@@ -8,7 +8,7 @@ function getComputerChoice(){
         return "scissors";
     }
 }
-const playBtn = document.querySelector(".roundDisplay")
+const playBtn = document.querySelector(".startGame")
 const playNow = document.createElement("button")
 playNow.classList.add("playNow")
 playBtn.appendChild(playNow)
@@ -92,19 +92,19 @@ playGame()
 function playRound(humanScore, computerScore) {
 if (humanScore == "Rock" ) {
     //updating what round we are on
-    currentRound.textContent = "round" + " " + roundCounter++;
+    currentRound.textContent = "round" + " " + roundCounter++ + " " + "of 5";
     //displaying what choice was made by human
     choiceDisplay.textContent = "you choose Rock !"
    
 } else if(humanScore == "paper") {
     //updating what round we are on
-    currentRound.textContent = "round" + " " + roundCounter++;
+    currentRound.textContent = "round" + " " + roundCounter++ + " " + "of 5";
      //displaying what choice was made by human
     choiceDisplay.textContent = "you choose Paper !"
 
 } else if(humanScore == "scissors"){
     //updating what round we are on
-    currentRound.textContent = "round" + " " + roundCounter++;
+    currentRound.textContent = "round" + " " + roundCounter++ + " " + "of 5";
     //displaying what choice was made by human
     choiceDisplay.textContent = "you choose scissors !"
 }else {
