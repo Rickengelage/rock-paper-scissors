@@ -13,7 +13,7 @@ const playNow = document.createElement("button")
 playNow.classList.add("playNow")
 playBtn.appendChild(playNow)
 playNow.textContent = "PLAY NOW"
-playNow.setAttribute("style", "padding: 48px; border: green 2px solid")
+playNow.setAttribute("style", "padding: 48px; border: green 2px solid; border-radius: 25px; background-color: #42f566;")
 playNow.addEventListener("click", () => {
     playNow.remove();
     playgame();
