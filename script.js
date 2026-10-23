@@ -14,9 +14,16 @@ rockBtn.addEventListener("click", () => {
     playRound("Rock", getComputerChoice());
     
 });
+// the paper choice button
 const paperBtn = document.querySelector(".btn-2")
 paperBtn.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
+    
+});
+//the scissors choice button
+const scissorsBtn = document.querySelector(".btn-3")
+scissorsBtn.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice());
     
 });
 
@@ -89,6 +96,7 @@ if (humanScore == "Rock" ) {
     console.log("invalid input");
 }
 
+//rock section
 if(humanScore == "Rock" && computerScore == "paper") {
     //updated the computer scorebaord when he wins
     computerScoreBoard++
@@ -109,7 +117,7 @@ if(humanScore == "Rock" && computerScore == "paper") {
     machineDisplay.textContent = "the computer chooses rock too, its a tie!"
     machineDisplay.setAttribute("style" ,"color: gray");
    
-
+//paper section
 }else if(humanScore == "paper" && computerScore == "rock") {
     //update the scoreboard
     humanScoreBoard++;
@@ -119,7 +127,6 @@ if(humanScore == "Rock" && computerScore == "paper") {
     machineDisplay.textContent = "the computer chooses rock! YOU WIN!"
     //change the color to green because human wom
     machineDisplay.setAttribute("style" ,"color: green");
-
 }else if(humanScore == "paper" && computerScore == "paper") {
     machineDisplay.textContent = "the computer chooses paper too! its a tie!"
     machineDisplay.setAttribute("style" ,"color: gray");
@@ -132,6 +139,8 @@ if(humanScore == "Rock" && computerScore == "paper") {
     machineDisplay.textContent = "the computer chooses scissors, therefor the computer wins this round."
     // changing the displayed text to red because the computer won this round
     machineDisplay.setAttribute("style" ,"color: red");
+
+    //scissors section
 }else if(humanScore == "scissors" && computerScore == "rock") {
     console.log("the computer chooses rock, therefore the computer wins!")
     computerScoreBoard++;
