@@ -98,8 +98,16 @@ if(humanScore == "Rock" && computerScore == "paper") {
     computerChoice.classList.add("computerChoice")
     container.appendChild(computerChoice);
     computerChoice.textContent = "the computer chooses scissors! YOU WIN!";
+
+    //HERE: please update the code below to also display what the computer choose,
+    //and then update the scoreboard acordingly!
 }else if(humanScore == "Rock" && computerScore == "rock"){
-    console.log("the computer chooses rock too, its a tie!");
+    const container = document.querySelector(".btn-container");
+    const computerChoice = document.createElement("h3")
+    computerChoice.classList.add("computerChoice")
+    container.appendChild(computerChoice);
+    computerChoice.textContent = "the computer chooses rock too, its a tie";
+
 }else if(humanScore == "paper" && computerScore == "rock") {
     console.log("The computer chooses rock, YOU WIN!");
     humanScoreBoard++;
