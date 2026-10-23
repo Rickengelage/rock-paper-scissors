@@ -8,6 +8,21 @@ function getComputerChoice(){
         return "scissors";
     }
 }
+const playBtn = document.querySelector(".roundDisplay")
+const playNow = document.createElement("button")
+playNow.classList.add("playNow")
+playBtn.appendChild(playNow)
+playNow.textContent = "PLAY NOW"
+playNow.setAttribute("style", "padding: 48px; border: green 2px solid")
+playNow.addEventListener("click", () => {
+    playNow.remove();
+    playgame();
+})
+
+
+function playgame(){
+
+
 //the rock choice button
 const rockBtn = document.querySelector(".btn-1")
 rockBtn.addEventListener("click", () => {
@@ -71,7 +86,7 @@ const machineDisplay = document.createElement("h3");
 machineDisplay.classList.add("machineDisplay");
 machineChoice.appendChild(machineDisplay);
 machineDisplay.textContent = ""
-
+playGame()
 
 //function that plays each round when clicked a choice
 function playRound(humanScore, computerScore) {
@@ -166,35 +181,4 @@ if(humanScore == "Rock" && computerScore == "paper") {
     console.log("invalid input")
 }
 }
-// for (let i=0; i < 5; i++) {
-//     let humanSelection = getHumanChoice();
-//     let computerSelection = getComputerChoice();
-//     playRound(humanSelection, computerSelection);
-// }
-// if (humanScoreBoard > computerScoreBoard) {
-//  console.log("YAY! you won from the computer! well done.");
-// }else if(humanScoreBoard < computerScoreBoard){
-//     console.log("...OOFFF... you let the computer win! better luck next time.");
-// }else {
-//     console.log("The end result..... its a tie")
-// }
-// }
-
-
-// function getHumanChoice() {
-// const Rock = document.querySelector(".btn-1");
-// Rock.addEventListener("click", playRound())
-//     // let choice = prompt("Choose between, Rock, Paper, or Scissors");
-//     // choice = choice.toLowerCase().trim();
-//     // if(choice == "rock") {
-//     //     return "rock";
-//     // } else if(choice == "paper"){
-//     //     return "paper";
-//     // } else if(choice == "scissors"){
-//     //     return "scissors";
-//     // }else {
-//     //     return "invalid input"
-//     // }
-// }
-
-// playGame()
+}
