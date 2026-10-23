@@ -198,6 +198,10 @@ if(roundCounter > 5){
         playAgain.classList.add("playAgain")
         newGame.appendChild(playAgain)
         playAgain.textContent = "PLAY AGAIN"
+        //add event listener to the play again button that will refresh the page
+         playAgain.addEventListener("click", () => {
+            window.location.reload();
+        })
     }else if ( computerScoreBoard < humanScoreBoard){
         //new text that will display who won the 5 rounds
         const endresultHuman = document.querySelector(".choiceContainer");
@@ -211,7 +215,10 @@ if(roundCounter > 5){
         playAgain.classList.add("playAgain")
         newGame.appendChild(playAgain)
         playAgain.textContent = "PLAY AGAIN"
-
+        //add event listener to the play again button that will refresh the page
+        playAgain.addEventListener("click", () => {
+            window.location.reload();
+        })
     }
 
  
