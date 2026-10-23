@@ -185,7 +185,9 @@ if(roundCounter > 5){
     paperBtn.remove()
     scissorsBtn.remove()
     choiceDisplay.textContent = "Final round played!"
+    choiceDisplay.setAttribute("style", "color: green");
     machineDisplay.textContent = "the machine had" + " " + computerScoreBoard + " " + "points" + " "  + "while you have" + " " + humanScoreBoard + " " + "points."
+    machineDisplay.setAttribute("style", "color: black");
     if( computerScoreBoard > humanScoreBoard) {
         const endresult = document.querySelector(".choiceContainer");
         const result = document.createElement("h1");
@@ -209,8 +211,8 @@ if(roundCounter > 5){
         const resultHumanWin = document.createElement("h1");
         resultHumanWin.classList.add("resultHumanWin");
         endresultHuman.appendChild(resultHumanWin);
-        resultHumanWin.textContent = "therefor the computer wins"
-        resultHumanWin.setAttribute("style", "color: red;")
+        resultHumanWin.textContent = "therefor YOU WIN!"
+        resultHumanWin.setAttribute("style", "color: green;");
         //create button that will refresh page to play again
         const newGame = document.querySelector(".btn-container")
         const playAgain = document.createElement("button");
