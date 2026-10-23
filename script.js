@@ -223,6 +223,26 @@ if(roundCounter > 5){
         playAgain.addEventListener("click", () => {
             window.location.reload();
         })
+    }else if(computerScoreBoard == humanScoreBoard){
+ //new text that will display who won the 5 rounds
+        const endresultHuman = document.querySelector(".choiceContainer");
+        const resultHumanWin = document.createElement("h1");
+        resultHumanWin.classList.add("resultHumanWin");
+        endresultHuman.appendChild(resultHumanWin);
+        resultHumanWin.textContent = "therefor its a tie!"
+        resultHumanWin.setAttribute("style", "color: gray;");
+        //create button that will refresh page to play again
+        const newGame = document.querySelector(".btn-container")
+        const playAgain = document.createElement("button");
+        playAgain.classList.add("playAgain")
+        newGame.appendChild(playAgain)
+        playAgain.textContent = "PLAY AGAIN"
+        //add event listener to the play again button that will refresh the page
+        playAgain.addEventListener("click", () => {
+            window.location.reload();
+        })
+
+
     }
 
  
