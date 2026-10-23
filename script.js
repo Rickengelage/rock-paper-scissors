@@ -80,6 +80,7 @@ if (humanScore == "Rock" ) {
     currentRound.textContent = "round" + " " + roundCounter++;
     //showing the text what choice was made
     choiceDisplay.textContent = "you choose Paper !"
+
 } else if(humanScore == "scissors"){
     roundCounter++
     console.log("ROUND" + " " + roundCounter + "...");
@@ -110,13 +111,27 @@ if(humanScore == "Rock" && computerScore == "paper") {
    
 
 }else if(humanScore == "paper" && computerScore == "rock") {
-    console.log("The computer chooses rock, YOU WIN!");
+    //update the scoreboard
     humanScoreBoard++;
+    //updating human scoreboard because human won
+    humanPoints.textContent = "Your Score is:" + " " + humanScoreBoard;
+    //display the computer choice and who won the round
+    machineDisplay.textContent = "the computer chooses rock! YOU WIN!"
+    //change the color to green because human wom
+    machineDisplay.setAttribute("style" ,"color: green");
+
 }else if(humanScore == "paper" && computerScore == "paper") {
-    console.log("The computer chooses paper too, its a tie!");
+    machineDisplay.textContent = "the computer chooses paper too! its a tie!"
+    machineDisplay.setAttribute("style" ,"color: gray");
 }else if(humanScore == "paper" && computerScore == "scissors"){
-    console.log("The computer chooses scissors, therefor the computer wins!")
+    //updating the scoreboard
     computerScoreBoard++;
+    // updating the computer scoreboard because computer won this round
+    computerPoints.textContent = "computer Score is:" + " " + computerScoreBoard;
+    //displaying the computer text and who won the round
+    machineDisplay.textContent = "the computer chooses scissors, therefor the computer wins this round."
+    // changing the displayed text to red because the computer won this round
+    machineDisplay.setAttribute("style" ,"color: red");
 }else if(humanScore == "scissors" && computerScore == "rock") {
     console.log("the computer chooses rock, therefore the computer wins!")
     computerScoreBoard++;
