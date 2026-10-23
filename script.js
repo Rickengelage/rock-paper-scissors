@@ -180,5 +180,41 @@ if(humanScore == "Rock" && computerScore == "paper") {
 }else {
     console.log("invalid input")
 }
+if(roundCounter > 5){
+    rockBtn.remove()
+    paperBtn.remove()
+    scissorsBtn.remove()
+    choiceDisplay.textContent = "Final round played!"
+    machineDisplay.textContent = "the machine had" + " " + computerScoreBoard + " " + "points" + " "  + "while you have" + " " + humanScoreBoard + " " + "points."
+    if( computerScoreBoard > humanScoreBoard) {
+        const endresult = document.querySelector(".choiceContainer");
+        const result = document.createElement("h1");
+        result.classList.add("result");
+        endresult.appendChild(result);
+        result.textContent = "therefor the computer wins"
+        //create button to play again
+        const newGame = document.querySelector(".btn-container")
+        const playAgain = document.createElement("button");
+        playAgain.classList.add("playAgain")
+        newGame.appendChild(playAgain)
+        playAgain.textContent = "PLAY AGAIN"
+    }else if ( computerScoreBoard < humanScoreBoard){
+        //new text that will display who won the 5 rounds
+        const endresultHuman = document.querySelector(".choiceContainer");
+        const resultHumanWin = document.createElement("h1");
+        resultHumanWin.classList.add("resultHumanWin");
+        endresultHuman.appendChild(resultHumanWin);
+        resultHumanWin.textContent = "therefor the computer wins"
+        //create button that will refresh page to play again
+        const newGame = document.querySelector(".btn-container")
+        const playAgain = document.createElement("button");
+        playAgain.classList.add("playAgain")
+        newGame.appendChild(playAgain)
+        playAgain.textContent = "PLAY AGAIN"
+
+    }
+
+ 
+}
 }
 }
